@@ -28,3 +28,13 @@
 # print('hasilnya: ', fahrenhit)
 
 # conversi sirup ke drop
+
+smallest = None
+print('Before: ', smallest)
+for iterver in [3, 41, 12, 9, 74, 15]:
+    if smallest is None or iterver < smallest:
+        smallest = iterver
+        break
+    print('loop', iterver, smallest)
+
+print('smallest: ', smallest)

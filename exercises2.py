@@ -1,44 +1,35 @@
-# Exercise 1: Rewrite your pay computation to give the employee 1.5
-# times the hourly rate for hours worked above 40 hours.
+# Exercise 6: Rewrite your pay computation with time-and-a-half for over-
+# time and create a function called computepay which takes two parameters
+# (hours and rate).
 
-# hours = float(input('Enter total jam kerja: '))
-# rate = float(input('Enter upah perjam: '))
+# Enter Hours: 45
+# Enter Rate: 10
+# Pay: 475.0
 
-# if hours > 40:
-#     print('over time, give bonus $1.5')
-#     pay = (hours * rate) + 1.5
-
-# else:
-#     print('Gajih reguler')
-#     pay = hours * rate
-
-# print('total gajih yang diperoleh: $', pay)
-
-# Exercise 2: Rewrite your pay program using try and except so that your
-# program handles non-numeric input gracefully by printing a message
-# and exiting the program. The following shows two executions of the
-# program:
-
-# try:
-#     hours = float(input('Enter total jam kerja: '))
-#     rate = float(input('Enter upah perjam $ '))
-
+# def computepay(hours, rate):
 #     if hours > 40:
-#         pay = (hours * rate) + 1.5
 #         print('over time, give bonus $1.5')
+#         pay = (hours * rate) + 1.5
 
 #     else:
 #         print('Gajih reguler')
 #         pay = hours * rate
 
-#     print('total gajih yang diperoleh: $', pay)
+#     total = 'upah kariayawan yang harus di bayar $ '
 
-# except:
-#     print('please masukan angka bro, supaya ndik erorr')
+#     return print(total + str(pay))
 
-# Exercise 3: Write a program to prompt for a score between 0.0 and
-# 1.0. If the score is out of range, print an error message. If the score is
-# between 0.0 and 1.0, print a grade using the following table:
+
+# jam = float(input('Enter total jam kerja: '))
+# upah = float(input('Enter upah perjam: '))
+
+# computepay(jam, upah)
+
+
+# Exercise 7: Rewrite the grade program from the previous chapter using
+# a function called computegrade that takes a score as its parameter and
+# returns a grade as a string.
+
 
 # Score     # Grade
 # >= 0.9      A
@@ -48,21 +39,24 @@
 # < 0.6       E
 # 41          F
 
-try:
-    score = float(input('Enter score: '))
-
+def computegrade(score):
     if score >= 0.9 and score < 1.0:
-        print('grade A')
+        grade = 'grade A'
     elif score >= 0.8 and score < 0.9:
-        print('grade B')
+        grade = 'grade B'
     elif score >= 0.7 and score < 0.8:
-        print('grade C')
+        grade = 'grade C'
     elif score >= 0.6 and score < 0.7:
-        print('grade D')
+        grade = 'grade D'
     elif score < 0.6:
-        print('grade E')
+        grade = 'grade E'
 
     else:
-        print('Bad score')
-except:
-    print('Bad Score, masukan angka kaka')
+        grade = 'Bad score'
+
+    return grade
+
+
+skor = float(input('Enter score terkini: '))
+
+print(computegrade(skor))
